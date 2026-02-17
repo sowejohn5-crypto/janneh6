@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JANNEH</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <img id="app-logo" class="app-logo" src="logo.png" alt="JANNEH app logo" />
+      <div class="logo-fallback" id="logo-fallback" aria-label="App logo placeholder">JANNEH</div>
+      <div>
+        <h1>JANNEH</h1>
+        <p class="subtitle">Your daily Islamic companion</p>
+      </div>
+    </div>
+    <p class="note">Place your final logo as <code>logo.png</code> in the project root to replace the fallback.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="featured-title">
+      <h2 id="featured-title">Featured</h2>
+      <p><strong>Qur’anic tutorial by Shaykh Al-Husary</strong> highlighted in app resources.</p>
+    </section>
+
+    <section class="grid" aria-label="JANNEH feature cards">
+      <article class="card">
+        <h2>Full Qur'an</h2>
+        <p>Arabic + transliteration + translation across all 114 surahs (text-only view).</p>
+      </article>
+
+      <article class="card" id="daily-verse-card">
+        <h2>Daily Verse Reminder</h2>
+        <p>Save a daily reminder time locally on this device.</p>
+        <label for="verse-time">Reminder time:</label>
+        <input id="verse-time" type="time" />
+        <button id="save-verse-reminder" type="button">Save Reminder</button>
+        <p id="verse-reminder-status" class="status" aria-live="polite"></p>
+      </article>
+
+      <article class="card">
+        <h2>Hadith Library</h2>
+        <ul class="text-list">
+          <li><strong>Sincerity:</strong> “Actions are by intentions.” (Bukhari & Muslim)</li>
+          <li><strong>Mercy:</strong> “The merciful are shown mercy by The Most Merciful.” (Tirmidhi)</li>
+          <li><strong>Character:</strong> “The best of you are those with the best character.” (Bukhari)</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Prophets' Life Stories</h2>
+        <p>Short summaries with supportive visuals:</p>
+        <ul class="text-list">
+          <li><strong>Adam (AS):</strong> Beginning of humanity and repentance.</li>
+          <li><strong>Nuh (AS):</strong> Perseverance in da'wah.</li>
+          <li><strong>Ibrahim (AS):</strong> Tawhid and trust in Allah.</li>
+          <li><strong>Musa (AS):</strong> Courage and leadership.</li>
+          <li><strong>Muhammad ﷺ:</strong> Mercy to all worlds.</li>
+        </ul>
+      </article>
+
+      <article class="card" id="dua-card">
+        <h2>Du’a Reminder</h2>
+        <p>Run a simple countdown timer with an in-page reminder alert.</p>
+        <label for="dua-minutes">Minutes:</label>
+        <input id="dua-minutes" type="number" min="1" max="180" value="5" />
+        <button id="start-dua-timer" type="button">Start Timer</button>
+        <button id="clear-dua-timer" class="secondary" type="button">Clear Timer</button>
+        <p id="dua-status" class="status" aria-live="polite"></p>
+      </article>
+
+      <article class="card">
+        <h2>Islamic Motivational Quotes</h2>
+        <blockquote id="quote-display"></blockquote>
+        <button id="next-quote" type="button">Next Quote</button>
+      </article>
+
+      <article class="card" id="prayer-tracker-card">
+        <h2>Prayer Tracker Calendar</h2>
+        <label for="prayer-date">Date:</label>
+        <input id="prayer-date" type="date" />
+        <label for="prayer-name">Prayer:</label>
+        <select id="prayer-name">
+          <option>Fajr</option>
+          <option>Dhuhr</option>
+          <option>Asr</option>
+          <option>Maghrib</option>
+          <option>Isha</option>
+        </select>
+        <button id="mark-prayer" type="button">Mark Completed</button>
+        <button id="clear-prayer-log" class="secondary" type="button">Clear Log</button>
+        <ul id="prayer-log" class="text-list"></ul>
+      </article>
+
+      <article class="card" id="progress-card">
+        <h2>User Progress + Hasanat Counter</h2>
+        <p>Current hasanat: <strong id="hasanat-count">0</strong></p>
+        <button id="increase-hasanat" type="button">+1 Hasanat</button>
+        <button id="reset-hasanat" class="secondary" type="button">Reset</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
